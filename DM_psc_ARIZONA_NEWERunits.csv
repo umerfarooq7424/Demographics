@@ -1,0 +1,85 @@
+Structure,VALUE_TENURE,value_range,PSC,(K-5),(6-8),(9-12)
+"Single-Family Detached  (Own/Rent), 2 BR",All Values,,0.09134124,0.04137723,0.0194165,0.03054751
+"Single-Family Detached  (Own/Rent), 2 BR",    Below Median,265001,0.13308335,0.06019341,0.02430761,0.04858233
+"Single-Family Detached  (Own/Rent), 2 BR",    Above Median,265000,0.0480897,0.02188064,0.01434852,0.01186054
+"Single-Family Detached  (Own/Rent), 3 BR",All Values,,0.38860719,0.17657995,0.09699301,0.11503424
+"Single-Family Detached  (Own/Rent), 3 BR",    Below Median,250000,0.49950561,0.23198294,0.12504591,0.14247676
+"Single-Family Detached  (Own/Rent), 3 BR",    Above Median,250000,0.27536619,0.12000663,0.06834753,0.08701202
+"Single-Family Detached  (Own/Rent), 4-5 BR",All Values,,0.79372161,0.32434837,0.20512273,0.26425052
+"Single-Family Detached  (Own/Rent), 4-5 BR",    Below Median,325000,0.85862363,0.35599104,0.22623106,0.27640153
+"Single-Family Detached  (Own/Rent), 4-5 BR",    Above Median,325000,0.72630955,0.29148193,0.18319804,0.25162958
+"Single-Family Attached  (Own/Rent), 2 BR",All Values,,0.0777071,0.0347153,0.01984826,0.02314354
+"Single-Family Attached  (Own/Rent), 2 BR",    Below Median,220000,0.12916667,0.05997024,0.03303571,0.03616071
+"Single-Family Attached  (Own/Rent), 2 BR",    Above Median,220000,0.02306842,0.00790014,0.00584611,0.00932217
+"Single-Family Attached  (Own/Rent), 3 BR",All Values,,0.29867327,0.1294757,0.06210038,0.10709719
+"Single-Family Attached  (Own/Rent), 3 BR",    Below Median,220000,0.38587874,0.16270146,0.07490407,0.14827322
+"Single-Family Attached  (Own/Rent), 3 BR",    Above Median,220000,0.2039353,0.09338002,0.04819076,0.06236452
+"2-4 Units  (Own/Rent), 0-1 BR",All Values,,0.07550143,0.04713467,0.01647564,0.01189112
+"2-4 Units  (Own/Rent), 0-1 BR",    Below Median,112000,0.07540893,0.04047685,0.02328805,0.01164403
+"2-4 Units  (Own/Rent), 0-1 BR",    Above Median,112000,0.07560036,0.05425437,0.00919063,0.01215535
+"2-4 Units  (Own/Rent), 2 BR",All Values,,0.30799677,0.17197092,0.04919225,0.0868336
+"2-4 Units  (Own/Rent), 2 BR",    Below Median,128000,0.39524872,0.22146046,0.06345663,0.11033163
+"2-4 Units  (Own/Rent), 2 BR",    Above Median,128000,0.2184021,0.12115259,0.03454486,0.06270465
+"2-4 Units (Own/Rent), 3 BR",All Values,,0.57449463,0.24032942,0.10781133,0.22635388
+"2-4 Units (Own/Rent), 3 BR",    Below Median,174000,0.64984642,0.26766125,0.12593243,0.25625274
+"2-4 Units (Own/Rent), 3 BR",    Above Median,174000,0.47511574,0.20428241,0.08391204,0.1869213
+"5-49 Units (Own), 0-1 BR",All Values,,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 0-1 BR",    Below Median,250000,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 0-1 BR",    Above Median,250000,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 2 BR",All Values,,0.04295302,0.03691275,0.0,0.00604027
+"5-49 Units (Own), 2 BR",    Below Median,280000,0.06798517,0.06798517,0.0,0.0
+"5-49 Units (Own), 2 BR",    Above Median,280000,0.01321586,0.0,0.0,0.01321586
+"5-49 Units (Own), 3 BR",All Values,,0.23836389,0.08956276,0.1438646,0.00493653
+"5-49 Units (Own), 3 BR",    Below Median,290000,0.17579618,0.14649682,0.02038217,0.0089172
+"5-49 Units (Own), 3 BR",    Above Median,290000,0.31595577,0.01895735,0.29699842,0.0
+"5-49 Units (Rent), 0-1 BR",All Values,,0.04528253,0.02622994,0.00687285,0.01217974
+"5-49 Units (Rent), 0-1 BR",    Below Median,121000,0.05554131,0.03640092,0.00837392,0.01076647
+"5-49 Units (Rent), 0-1 BR",    Above Median,121000,0.03464469,0.01568315,0.00531632,0.01364522
+"5-49 Units (Rent), 2 BR",All Values,,0.21596825,0.11311756,0.04711108,0.05573961
+"5-49 Units (Rent), 2 BR",    Below Median,149000,0.30554771,0.14808018,0.07531056,0.08215697
+"5-49 Units (Rent), 2 BR",    Above Median,149000,0.12053538,0.07587037,0.01706895,0.02759606
+"5-49 Units (Rent), 3 BR",All Values,,0.74396135,0.29673547,0.17318109,0.2740448
+"5-49 Units (Rent), 3 BR",    Below Median,157000,0.93506124,0.32611792,0.27257192,0.3363714
+"5-49 Units (Rent), 3 BR",    Above Median,157000,0.54186747,0.26566265,0.06807229,0.20813253
+"50+ Units (Own), 0-1 BR",All Values,,0.0,0.0,0.0,0.0
+"50+ Units (Own), 0-1 BR",    Below Median,295000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 0-1 BR",    Above Median,295000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 2 BR",All Values,,0.05912596,0.0,0.01028278,0.04884319
+"50+ Units (Own), 2 BR",    Below Median,330000,0.1039548,0.0,0.0180791,0.08587571
+"50+ Units (Own), 2 BR",    Above Median,330000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 3 BR",All Values,,0.0,0.0,0.0,0.0
+"50+ Units (Own), 3 BR",    Below Median,675000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 3 BR",    Above Median,675000,0.0,0.0,0.0,0.0
+"50+ Units (Rent), 0-1 BR",All Values,,0.00657473,0.0049097,0.00055501,0.00111002
+"50+ Units (Rent), 0-1 BR",    Below Median,150000,0.00948992,0.00618539,0.00110151,0.00220302
+"50+ Units (Rent), 0-1 BR",    Above Median,150000,0.00361415,0.00361415,0.0,0.0
+"50+ Units (Rent), 2 BR",All Values,,0.20791086,0.12357414,0.03538234,0.04895437
+"50+ Units (Rent), 2 BR",    Below Median,165000,0.29413609,0.1742448,0.04661858,0.07327271
+"50+ Units (Rent), 2 BR",    Above Median,165000,0.11986338,0.07183264,0.02390863,0.0241221
+"50+ Units (Rent), 3 BR",All Values,,0.70878136,0.28225806,0.16935484,0.25716846
+"50+ Units (Rent), 3 BR",    Below Median,165000,0.90512175,0.33585223,0.26700252,0.302267
+"50+ Units (Rent), 3 BR",    Above Median,165000,0.48414986,0.2209414,0.05763689,0.20557157
+All Housing Types (Own) 0-1 BR,All Values,,0.22594793,0.06833616,0.08432371,0.07328806
+All Housing Types (Own) 0-1 BR,    Below Median,155000,0.24875752,0.05911588,0.09207429,0.09756736
+All Housing Types (Own) 0-1 BR,    Above Median,155000,0.1990755,0.07919877,0.0751926,0.04468413
+All Housing Types (Own) 2 BR,All Values,,0.06828571,0.02817195,0.01536652,0.02474724
+All Housing Types (Own) 2 BR,    Below Median,290000,0.0899074,0.03428672,0.01778807,0.03783261
+All Housing Types (Own) 2 BR,    Above Median,290000,0.04595126,0.02185561,0.01286514,0.01123051
+All Housing Types (Own) 3 BR,All Values,,0.31679729,0.14010123,0.07928402,0.09741203
+All Housing Types (Own) 3 BR,    Below Median,280000,0.36840113,0.1652655,0.09108611,0.11204951
+All Housing Types (Own) 3 BR,    Above Median,280000,0.259008,0.11192067,0.06606729,0.08102004
+All Housing Types (Own) 4-5 BR,All Values,,0.75547985,0.30876539,0.19390281,0.25281164
+All Housing Types (Own) 4-5 BR,    Below Median,350000,0.78588817,0.327529,0.20288563,0.25547355
+All Housing Types (Own) 4-5 BR,    Above Median,350000,0.72422586,0.28947998,0.18467018,0.2500757
+All Housing Types (Rent) 0-1 BR,All Values,,0.03694913,0.02177392,0.00539403,0.00978118
+All Housing Types (Rent) 0-1 BR,    Below Median,131000,0.04448881,0.02816198,0.00648795,0.00983887
+All Housing Types (Rent) 0-1 BR,    Above Median,131000,0.02927626,0.01527299,0.00428079,0.00972247
+All Housing Types (Rent) 2 BR,All Values,,0.22895638,0.12645028,0.04316046,0.05934563
+All Housing Types (Rent) 2 BR,    Below Median,149000,0.3128273,0.17445474,0.0549577,0.08341486
+All Housing Types (Rent) 2 BR,    Above Median,149000,0.14372186,0.07766536,0.03117141,0.03488508
+All Housing Types (Rent) 3 BR,All Values,,0.70298552,0.32552203,0.1701733,0.2072902
+All Housing Types (Rent) 3 BR,    Below Median,161000,0.75889303,0.37309661,0.19454097,0.19125545
+All Housing Types (Rent) 3 BR,    Above Median,161000,0.64665627,0.27758857,0.1456218,0.22344591
+All Housing Types (Rent) 4-5 BR,All Values,,1.0586075,0.4301102,0.29364488,0.33485238
+All Housing Types (Rent) 4-5 BR,    Below Median,184000,0.96133964,0.42212934,0.24675539,0.29245491
+All Housing Types (Rent) 4-5 BR,    Above Median,184000,1.1567442,0.43816235,0.34095323,0.37762859

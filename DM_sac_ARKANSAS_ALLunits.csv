@@ -1,0 +1,113 @@
+Structure,VALUE_TENURE,value_range,SAC,(K-5),(6-8),(9-12)
+"Single-Family Detached  (Own/Rent), 2 BR",All Values,,0.21044945,0.1069312,0.05008725,0.05343101
+"Single-Family Detached  (Own/Rent), 2 BR",First Tercile,Below 70000,0.21394118,0.11292966,0.0556336,0.04537792
+"Single-Family Detached  (Own/Rent), 2 BR",Second Tercile,70000 to 118000,0.24527419,0.1264271,0.05612484,0.06272225
+"Single-Family Detached  (Own/Rent), 2 BR",Third Tercile ,Above 118000,0.17376403,0.08252503,0.03900002,0.05223897
+"Single-Family Detached  (Own/Rent), 3 BR",All Values,,0.43225428,0.19568827,0.10232531,0.13424069
+"Single-Family Detached  (Own/Rent), 3 BR",First Tercile,Below 100000,0.44844594,0.20205024,0.10870861,0.13768709
+"Single-Family Detached  (Own/Rent), 3 BR",Second Tercile,100000 to 171000,0.50398739,0.23642372,0.11270607,0.1548576
+"Single-Family Detached  (Own/Rent), 3 BR",Third Tercile ,Above 171000,0.34857387,0.15080687,0.08645252,0.11131448
+"Single-Family Detached  (Own/Rent), 4-5 BR",All Values,,0.86014677,0.3616294,0.21168766,0.28682971
+"Single-Family Detached  (Own/Rent), 4-5 BR",First Tercile,Below 156000,0.88854142,0.36433937,0.20925252,0.31494952
+"Single-Family Detached  (Own/Rent), 4-5 BR",Second Tercile,156000 to 293000,0.86285617,0.36216722,0.21803181,0.28265714
+"Single-Family Detached  (Own/Rent), 4-5 BR",Third Tercile ,Above 293000,0.83131676,0.35861928,0.20806945,0.26462804
+"Single-Family Attached  (Own/Rent), 2 BR",All Values,,0.25346331,0.13791688,0.04956388,0.06598256
+"Single-Family Attached  (Own/Rent), 2 BR",First Tercile,Below 87000,0.34698343,0.17317912,0.06533292,0.1084714
+"Single-Family Attached  (Own/Rent), 2 BR",Second Tercile,87000 to 114000,0.2699817,0.14246492,0.0585723,0.06894448
+"Single-Family Attached  (Own/Rent), 2 BR",Third Tercile ,Above 114000,0.14534884,0.09883721,0.0250918,0.02141983
+"Single-Family Attached  (Own/Rent), 3 BR",All Values,,0.60091924,0.30610637,0.11608667,0.1787262
+"Single-Family Attached  (Own/Rent), 3 BR",First Tercile,Below 107000,0.62934519,0.35974131,0.10590137,0.16370251
+"Single-Family Attached  (Own/Rent), 3 BR",Second Tercile,107000 to 142000,0.87773279,0.45222672,0.1805668,0.24493927
+"Single-Family Attached  (Own/Rent), 3 BR",Third Tercile ,Above 142000,0.31860726,0.12130288,0.06589292,0.13141146
+"2-4 Units  (Own/Rent), 0-1 BR",All Values,,0.05704391,0.02414506,0.01111058,0.02178827
+"2-4 Units  (Own/Rent), 0-1 BR",First Tercile,Below 37000,0.0475825,0.02302379,0.00552571,0.019033
+"2-4 Units  (Own/Rent), 0-1 BR",Second Tercile,37000 to 66000,0.06162268,0.03032004,0.00884335,0.02245929
+"2-4 Units  (Own/Rent), 0-1 BR",Third Tercile ,Above 66000,0.06110179,0.01901566,0.01845638,0.02362975
+"2-4 Units  (Own/Rent), 2 BR",All Values,,0.33370467,0.18425548,0.07406857,0.07538062
+"2-4 Units  (Own/Rent), 2 BR",First Tercile,Below 68000,0.25854652,0.13221644,0.07040978,0.05592031
+"2-4 Units  (Own/Rent), 2 BR",Second Tercile,68000 to 92000,0.3973074,0.21219147,0.08511593,0.1
+"2-4 Units  (Own/Rent), 2 BR",Third Tercile ,Above 92000,0.34427182,0.20720197,0.06686511,0.07020473
+"2-4 Units (Own/Rent), 3 BR",All Values,,0.99278049,0.5062439,0.23346341,0.25307317
+"2-4 Units (Own/Rent), 3 BR",First Tercile,Below 83000,1.1904616,0.60348517,0.26199939,0.32497707
+"2-4 Units (Own/Rent), 3 BR",Second Tercile,83000 to 117000,0.78128655,0.43040936,0.19824561,0.15263158
+"2-4 Units (Own/Rent), 3 BR",Third Tercile ,Above 117000,1.0143299,0.48974431,0.24107895,0.2835066
+"5-49 Units (Own), 0-1 BR",All Values,,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 0-1 BR",First Tercile,Below 100000,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 0-1 BR",Second Tercile,100000 to 180000,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 0-1 BR",Third Tercile ,Above 180000,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 2 BR",All Values,,0.10018051,0.06498195,0.0,0.03519856
+"5-49 Units (Own), 2 BR",First Tercile,Below 100000,0.16863905,0.1183432,0.0,0.05029586
+"5-49 Units (Own), 2 BR",Second Tercile,100000 to 180000,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 2 BR",Third Tercile ,Above 180000,0.10305344,0.0610687,0.0,0.04198473
+"5-49 Units (Own), 3 BR",All Values,,0.07608696,0.07608696,0.0,0.0
+"5-49 Units (Own), 3 BR",First Tercile,Below 85000,1.5555556,1.5555556,0.0,0.0
+"5-49 Units (Own), 3 BR",Second Tercile,85000 to 92000,0.0,0.0,0.0,0.0
+"5-49 Units (Own), 3 BR",Third Tercile ,Above 92000,0.0,0.0,0.0,0.0
+"5-49 Units (Rent), 0-1 BR",All Values,,0.04693803,0.03175651,0.00606283,0.00911869
+"5-49 Units (Rent), 0-1 BR",First Tercile,Below 60000,0.04460129,0.02958402,0.00397958,0.01103769
+"5-49 Units (Rent), 0-1 BR",Second Tercile,60000 to 84000,0.07411175,0.05202354,0.00864637,0.01344184
+"5-49 Units (Rent), 0-1 BR",Third Tercile ,Above 84000,0.02213542,0.01367188,0.00549769,0.00296586
+"5-49 Units (Rent), 2 BR",All Values,,0.34918478,0.20052622,0.07106194,0.07759662
+"5-49 Units (Rent), 2 BR",First Tercile,Below 74000,0.36008123,0.21105725,0.08509105,0.06393292
+"5-49 Units (Rent), 2 BR",Second Tercile,74000 to 98000,0.35598685,0.19820749,0.06783158,0.08994777
+"5-49 Units (Rent), 2 BR",Third Tercile ,Above 98000,0.33175143,0.19252229,0.06053999,0.07868916
+"5-49 Units (Rent), 3 BR",All Values,,1.2195996,0.51527924,0.3483667,0.35595364
+"5-49 Units (Rent), 3 BR",First Tercile,Below 83000,1.2977303,0.71428571,0.36582109,0.2176235
+"5-49 Units (Rent), 3 BR",Second Tercile,83000 to 116000,1.4378571,0.32214286,0.55357143,0.56214286
+"5-49 Units (Rent), 3 BR",Third Tercile ,Above 116000,0.99079589,0.50027071,0.17866811,0.31185707
+"50+ Units (Own), 0-1 BR",All Values,,0.0,0.0,0.0,0.0
+"50+ Units (Own), 0-1 BR",First Tercile,Below 175000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 0-1 BR",Second Tercile,175000 to 279000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 0-1 BR",Third Tercile ,Above 279000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 2 BR",All Values,,0.2919708,0.2919708,0.0,0.0
+"50+ Units (Own), 2 BR",First Tercile,Below 250000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 2 BR",Second Tercile,250000 to 409000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 2 BR",Third Tercile ,Above 409000,0.51948052,0.51948052,0.0,0.0
+"50+ Units (Own), 3 BR",All Values,,0.0,0.0,0.0,0.0
+"50+ Units (Own), 3 BR",First Tercile,Below 250000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 3 BR",Second Tercile,250000 to 340000,0.0,0.0,0.0,0.0
+"50+ Units (Own), 3 BR",Third Tercile ,Above 340000,0.0,0.0,0.0,0.0
+"50+ Units (Rent), 0-1 BR",All Values,,0.02305159,0.01262349,0.00393341,0.00649469
+"50+ Units (Rent), 0-1 BR",First Tercile,Below 52000,0.04519774,0.01836158,0.00677966,0.0200565
+"50+ Units (Rent), 0-1 BR",Second Tercile,52000 to 98000,0.01521739,0.01521739,0.0,0.0
+"50+ Units (Rent), 0-1 BR",Third Tercile ,Above 98000,0.00969828,0.00457974,0.00511853,0.0
+"50+ Units (Rent), 2 BR",All Values,,0.1377206,0.09170378,0.03034801,0.01566881
+"50+ Units (Rent), 2 BR",First Tercile,Below 85000,0.16466283,0.12023001,0.03711448,0.00731835
+"50+ Units (Rent), 2 BR",Second Tercile,85000 to 118000,0.17853457,0.09081527,0.04592363,0.04179567
+"50+ Units (Rent), 2 BR",Third Tercile ,Above 118000,0.07866184,0.06781193,0.01084991,0.0
+"50+ Units (Rent), 3 BR",All Values,,1.0496575,0.72773973,0.19520548,0.12671233
+"50+ Units (Rent), 3 BR",First Tercile,Below 118000,0.86486486,0.27027027,0.37837838,0.21621622
+"50+ Units (Rent), 3 BR",Second Tercile,118000 to 140000,0.0,0.0,0.0,0.0
+"50+ Units (Rent), 3 BR",Third Tercile ,Above 140000,1.218593,0.96733668,0.14572864,0.10552764
+All Housing Types (Own) 0-1 BR,All Values,,0.09680041,0.0406414,0.01839947,0.03775955
+All Housing Types (Own) 0-1 BR,First Tercile,Below 60000,0.04024983,0.02428869,0.00231321,0.01364793
+All Housing Types (Own) 0-1 BR,Second Tercile,60000 to 148000,0.0980648,0.0456621,0.01782996,0.03457273
+All Housing Types (Own) 0-1 BR,Third Tercile ,Above 148000,0.1485578,0.05096508,0.03404901,0.0635437
+All Housing Types (Own) 2 BR,All Values,,0.14416084,0.06906715,0.03500456,0.04008913
+All Housing Types (Own) 2 BR,First Tercile,Below 75000,0.18874481,0.09031822,0.04803887,0.05038772
+All Housing Types (Own) 2 BR,Second Tercile,75000 to 142000,0.11125844,0.056473,0.02452989,0.03025554
+All Housing Types (Own) 2 BR,Third Tercile ,Above 142000,0.13563699,0.06203035,0.03333623,0.0402704
+All Housing Types (Own) 3 BR,All Values,,0.35642077,0.15559733,0.08544414,0.11537929
+All Housing Types (Own) 3 BR,First Tercile,Below 100000,0.3573852,0.14729089,0.09060571,0.11948861
+All Housing Types (Own) 3 BR,Second Tercile,100000 to 188000,0.37598393,0.17352021,0.08361375,0.11884997
+All Housing Types (Own) 3 BR,Third Tercile ,Above 188000,0.33620816,0.14554719,0.08249627,0.1081647
+All Housing Types (Own) 4-5 BR,All Values,,0.80834429,0.33781293,0.19706605,0.27346532
+All Housing Types (Own) 4-5 BR,First Tercile,Below 173000,0.78036119,0.29830293,0.18373718,0.29832108
+All Housing Types (Own) 4-5 BR,Second Tercile,173000 to 304000,0.8143895,0.35954822,0.19544818,0.25939309
+All Housing Types (Own) 4-5 BR,Third Tercile ,Above 304000,0.82920792,0.35536019,0.2110618,0.26278593
+All Housing Types (Rent) 0-1 BR,All Values,,0.04955011,0.0267933,0.00754811,0.0152087
+All Housing Types (Rent) 0-1 BR,First Tercile,Below 53000,0.03241247,0.01650775,0.00425885,0.01164587
+All Housing Types (Rent) 0-1 BR,Second Tercile,53000 to 80000,0.06973559,0.04066958,0.00916873,0.01989728
+All Housing Types (Rent) 0-1 BR,Third Tercile ,Above 80000,0.04676127,0.0234174,0.0091905,0.01415337
+All Housing Types (Rent) 2 BR,All Values,,0.34219988,0.1913948,0.0739297,0.07687537
+All Housing Types (Rent) 2 BR,First Tercile,Below 72000,0.30194236,0.16748348,0.08124635,0.05321254
+All Housing Types (Rent) 2 BR,Second Tercile,72000 to 97000,0.36193118,0.19694868,0.06923805,0.09574445
+All Housing Types (Rent) 2 BR,Third Tercile ,Above 97000,0.36183806,0.20920787,0.07146307,0.08116712
+All Housing Types (Rent) 3 BR,All Values,,0.84620955,0.41437926,0.19637702,0.23545327
+All Housing Types (Rent) 3 BR,First Tercile,Below 89000,0.78707653,0.406806,0.18267122,0.19759932
+All Housing Types (Rent) 3 BR,Second Tercile,89000 to 123000,0.88485804,0.43120602,0.19230769,0.26134433
+All Housing Types (Rent) 3 BR,Third Tercile ,Above 123000,0.86603824,0.40527521,0.21374409,0.24701894
+All Housing Types (Rent) 4-5 BR,All Values,,1.2899956,0.56996474,0.3270714,0.39295945
+All Housing Types (Rent) 4-5 BR,First Tercile,Below 95000,0.92542142,0.47318236,0.22288439,0.22935467
+All Housing Types (Rent) 4-5 BR,Second Tercile,95000 to 146000,1.4791768,0.62907146,0.39248096,0.45762437
+All Housing Types (Rent) 4-5 BR,Third Tercile ,Above 146000,1.4494106,0.60330714,0.36116568,0.48493779
