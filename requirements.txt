@@ -6,3 +6,7 @@ pandas
 numpy
 geopandas
 plotly
+python-dotenv
+mysql-connector-python
+pydeck
+pymysql
