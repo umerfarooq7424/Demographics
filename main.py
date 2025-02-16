@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import pydeck as pdk
 import json
+import re
 st.markdown(
     """
     <style>
@@ -72,7 +73,7 @@ st.sidebar.title("Options")
 selected_state = st.sidebar.selectbox("State:", df_states['State']).upper()
 unit_types = ["Allunits", "Newerunits"]
 category_labels = {
-    "Persons by Age": "pop",
+    "Household Size/Persons by Age": "pop",
     "Public School Children": "psc",
     "School Age Children": "sac"
 }
@@ -89,13 +90,53 @@ try:
     file_name = f"DM_{selected_category}_{selected_state}_{selected_unit_type}.csv"
     data = pd.read_csv(file_name)
     # Get unique values from the "Structure" column
-    unique_structures = data["Structure"].unique()
+    # unique_structures = data["Structure"].unique()
+    #####
+    # Split into components
+    def normalize_structure(structure):
+        structure = re.sub(r"\s*\(\s*", " (", structure)
+        structure = re.sub(r"\s*\)\s*,?\s*", ") ", structure)
+        return structure.strip()  
+    unique_structures = data["Structure"].apply(normalize_structure).unique()
 
+    structure_options = []
+    tenure_options = set()
+    size_options = set()
+    for structure in unique_structures:
+        parts = structure.split("(")
+        if len(parts) == 2:
+            house_type = parts[0].strip()
+            tenure_bedroom = parts[1].split(")")
+            if len(tenure_bedroom) == 2:
+                tenure = tenure_bedroom[0].strip()
+                bedroom = tenure_bedroom[1].strip()
+                structure_options.append(house_type)
+                tenure_options.add(tenure)
+                size_options.add(bedroom)
+
+    # Convert sets to lists
+    tenure_options = list(tenure_options)
+    size_options = list(size_options)
+
+    # User selects Type, Tenure, and Size separately
+    selected_type = st.sidebar.selectbox("Housing Type:", sorted(set(structure_options)))
+    selected_tenure = st.sidebar.selectbox("Tenure:", sorted(tenure_options))
+    selected_size = st.sidebar.selectbox("Number of Bedrooms:", sorted(size_options))
+
+    # Reconstruct the structure format
+    selected_structure = f"{selected_type} ({selected_tenure}) {selected_size}"
+    
+    data["Normalized_Structure"] = data["Structure"].apply(normalize_structure)
+
+    filtered_data = data[data["Normalized_Structure"] == selected_structure].copy()
+    data.drop(columns=["Normalized_Structure"], inplace=True)
+    filtered_data.drop(columns=["Normalized_Structure"], inplace=True)
+    #####
     # User selects a structure to view details
-    selected_structure = st.sidebar.selectbox("Structure:", unique_structures)
+    #selected_structure = st.sidebar.selectbox("Structure:", unique_structures)
 
     # Filter data based on the selected structure
-    filtered_data = data[data["Structure"] == selected_structure]
+    # filtered_data = data[data["Structure"] == selected_structure]
 
     # Display the filtered data
     if not filtered_data.empty:
