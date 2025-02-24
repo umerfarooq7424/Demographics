@@ -38,18 +38,18 @@ state_data = {
     'State': ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
               'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
               'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
-              'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota',
-              'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming', 'Washington D.C.', 'Puerto Rico'],
+              'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota',
+              'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'Washington D.C.', 'West Virginia', 'Wisconsin', 'Wyoming'],
     'Latitude': [32.806671, 61.370716, 33.729759, 34.969704, 36.116203, 39.059811, 41.597782, 39.318523, 27.766279, 33.040619,
                  21.094318, 44.240459, 40.349457, 39.849426, 42.011539, 38.526600, 37.668140, 31.169546, 44.693947, 39.063946,
                  42.230171, 43.326618, 45.694454, 32.741646, 38.456085, 46.921925, 41.125370, 38.313515, 43.452492, 40.298904,
-                 34.840515, 42.165726, 35.630066, 47.528912, 40.388783, 35.565342, 44.572021, 40.590752, 41.680893, 33.856892, 44.299782,
-                 35.747845, 31.054487, 40.150032, 44.045876, 37.769337, 47.400902, 38.491226, 44.268543, 42.755966, 38.9072, 38.89511],
+                 34.840515, 42.165726, 35.630066, 47.528912, 40.388783, 35.565342, 44.572021, 40.590752, 38.89511, 41.680893, 33.856892, 44.299782,
+                 35.747845, 31.054487, 40.150032, 44.045876, 37.769337, 47.400902, 38.9072, 38.491226, 44.268543, 42.755966],
     'Longitude': [-86.791130, -152.404419, -111.431221, -92.373123, -119.681564, -105.311104, -72.755371, -75.507141, -81.686783, -83.643074,
                   -157.498337, -114.478828, -88.986137, -86.258278, -93.210526, -96.726486, -84.670067, -91.867805, -69.381927, -76.802101,
                   -71.530106, -84.536095, -93.900192, -89.678696, -92.288368, -110.454353, -98.268082, -117.055374, -71.563896, -74.521011,
-                  -106.248482, -74.948051, -79.806419, -99.784012, -82.764915, -96.928917, -122.070938, -77.209755, -71.511780, -80.945007, -99.438828,
-                  -86.692345, -97.563461, -111.862434, -72.710686, -78.169968, -121.490494, -80.954456, -89.616508, -107.302490, -77.0369, -77.03637]
+                  -106.248482, -74.948051, -79.806419, -99.784012, -82.764915, -96.928917, -122.070938, -77.209755, -77.03637, -71.511780, -80.945007, -99.438828,
+                  -86.692345, -97.563461, -111.862434, -72.710686, -78.169968, -121.490494, -77.0369, -80.954456, -89.616508, -107.302490]
 }
 
 # Create a DataFrame from the state data
@@ -118,10 +118,27 @@ try:
     tenure_options = list(tenure_options)
     size_options = list(size_options)
 
+    custom_order_structure = ['Single-Family Detached','Single-Family Attached','2-4 Units','5-49 Units','50+ Units','All Housing Types']
+    structure_rename_map = {
+    'Single-Family Detached': 'Single Family Detached',
+    'Single-Family Attached': 'Single Family Attached (Townhouses)',
+    '2-4 Units': 'Smaller Multifamily (2-4 units)',
+    '5-49 Units': 'Midsize Multifamily (5-49 units)',
+    '50+ Units': 'Larger Multifamily (50 units+)',
+    'All Housing Types': 'All Housing Units'
+    }   
+    sorted_structure_options = sorted((set(structure_options)), key=lambda x: custom_order_structure.index(x))
+    renamed_structure_options = [structure_rename_map[x] for x in sorted_structure_options]
     # User selects Type, Tenure, and Size separately
-    selected_type = st.sidebar.selectbox("Structure Type:", sorted(set(structure_options)))
-    selected_tenure = st.sidebar.selectbox("Tenure:", sorted(tenure_options))
-    selected_size = st.sidebar.selectbox("Number of Bedrooms:", sorted(size_options))
+    selected_display_type = st.sidebar.selectbox("Structure Type:", renamed_structure_options)
+    selected_type = next(key for key, value in structure_rename_map.items() if value == selected_display_type)
+
+    if selected_type in ["5-49 Units", "50+ Units", "All Housing Types"]:
+        tenure_options_display = ["Own", "Rent"]
+    else:
+        tenure_options_display = ["Own/Rent"]
+    selected_tenure = st.sidebar.selectbox("Tenure:", tenure_options_display)
+    selected_size = st.sidebar.selectbox("Number of Bedrooms:", ['Studio-1BR' if x == '0-1 BR' else x for x in sorted(size_options)])
 
     # Reconstruct the structure format
     selected_structure = f"{selected_type} ({selected_tenure}) {selected_size}"
