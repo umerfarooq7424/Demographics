@@ -71,14 +71,22 @@ st.sidebar.title("Options")
 
 # User selects state, unit type, and data category
 selected_state = st.sidebar.selectbox("State:", df_states['State']).upper()
-unit_types = ["Allunits", "Newerunits"]
+# unit_types = ["Allunits", "Newerunits"]
+unit_types = {
+    "All (All Age) Housing - Built in any year": "Allunits",
+    "Newer (Newer Built) Housing - Built 2000-2021": "Newerunits"
+}
 category_labels = {
-    "Household Size/Persons by Age": "pop",
+    "Household Size": "pop",
+    "Persons by Age": "pop",
+    "Persons by Age Statistics": "pop",
     "Public School Children": "psc",
     "School Age Children": "sac"
 }
 
-selected_unit_type = st.sidebar.selectbox("Housing Age:", unit_types)
+# selected_unit_type = st.sidebar.selectbox("Housing Age:", unit_types, help="Newer Housing: Built between 2000-2021.\nAll Housing: Built in any year.")
+selected_label = st.sidebar.selectbox("Housing Age:", list(unit_types.keys()))
+selected_unit_type = unit_types[selected_label]
 
 selected_category_label = st.sidebar.selectbox("Data Category:", category_labels.keys())
 selected_category = category_labels[selected_category_label]
@@ -154,10 +162,18 @@ try:
 
     # Filter data based on the selected structure
     # filtered_data = data[data["Structure"] == selected_structure]
+    list_columns=["Structure", "VALUE_TENURE", "value_range"]
+    statistics= ["Number of Households" , "Standard Errors", "Low", "High", "Error Margin as %"]
+    labels_selected = {
+    "Household Size": ["Structure", "VALUE_TENURE", "value_range", "PERSONS"],
+    "Persons by Age": ["Structure", "VALUE_TENURE", "value_range", "0-4","5-17","18-34", "35-44", "45-54", "55-64", "65-74", "75+"],
+    "Persons by Age Statistics" : ["Structure", "VALUE_TENURE", "value_range","Number of Households" , "Standard Errors", "Low", "High", "Error Margin as %"],
+    }
 
     # Display the filtered data
     if not filtered_data.empty:
-        st.dataframe(filtered_data)
+        # st.dataframe(filtered_data)
+        st.dataframe(filtered_data[labels_selected[selected_category_label]])
     else:
         st.write("No data available for the selected structure.")
 
