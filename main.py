@@ -5,7 +5,7 @@ import json
 import re
 st.markdown(
     """
-    <style>
+    <style> 
     .main-container {
         display: flex;
         flex-direction: column;
