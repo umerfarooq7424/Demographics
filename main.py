@@ -230,7 +230,7 @@ try:
                 )
             ],
         ))
-        with st.expander("Glossary"):
+        with st.expander("Glossary and User Guide"):
             st.markdown(
                 """
                 <style>
