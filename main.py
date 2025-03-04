@@ -80,8 +80,10 @@ category_labels = {
     "Household Size": "pop",
     "Persons by Age": "pop",
     "Persons by Age Statistics": "pop",
-    "Public School Children": "psc",
-    "School Age Children": "sac"
+    "Total Public School Children" : "psc",
+    "Public School Children by school level and grade group": "psc",
+    "Total School Age Children" : "sac",
+    "School Age Children by school level and grade group": "sac"
 }
 
 # selected_unit_type = st.sidebar.selectbox("Housing Age:", unit_types, help="Newer Housing: Built between 2000-2021.\nAll Housing: Built in any year.")
@@ -168,6 +170,10 @@ try:
     "Household Size": ["Structure", "VALUE_TENURE", "value_range", "PERSONS"],
     "Persons by Age": ["Structure", "VALUE_TENURE", "value_range", "0-4","5-17","18-34", "35-44", "45-54", "55-64", "65-74", "75+"],
     "Persons by Age Statistics" : ["Structure", "VALUE_TENURE", "value_range","Number of Households" , "Standard Errors", "Low", "High", "Error Margin as %"],
+    "Total Public School Children" : ["Structure", "VALUE_TENURE", "value_range", "PSC"],
+    "Public School Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
+    "Total School Age Children" : ["Structure", "VALUE_TENURE", "value_range", "SAC"],
+    "School Age Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
     }
 
     # Display the filtered data
