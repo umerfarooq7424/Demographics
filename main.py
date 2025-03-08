@@ -180,6 +180,8 @@ try:
     "School Age Children Statistics":["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
     }
 
+    selected_value = st.sidebar.selectbox("Value", filtered_data['VALUE_TENURE'].dropna().unique())
+    filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
     # Display the filtered data
     if not filtered_data.empty:
         # st.dataframe(filtered_data)
