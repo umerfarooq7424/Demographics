@@ -79,7 +79,7 @@ unit_types = {
 category_labels = {
     "Household Size": "pop",
     "Persons by Age": "pop",
-    "Persons by Age Statistics": "pop",
+    "Household Size Statistics": "pop",
     "Total Public School Children" : "psc",
     "Public School Children by school level and grade group": "psc",
     "Public School Children Statistics": "psc",
@@ -139,18 +139,50 @@ try:
     '50+ Units': 'Larger Multifamily (50 units+)',
     'All Housing Types': 'All Housing Units'
     }   
-    sorted_structure_options = sorted((set(structure_options)), key=lambda x: custom_order_structure.index(x))
-    renamed_structure_options = [structure_rename_map[x] for x in sorted_structure_options]
-    # User selects Type, Tenure, and Size separately
-    selected_display_type = st.sidebar.selectbox("Structure Type:", renamed_structure_options)
-    selected_type = next(key for key, value in structure_rename_map.items() if value == selected_display_type)
+    # Combined structure and tenure options
+    combined_options = [
+        "Single-Family Detached (Combines Own and Rent tenure)",
+        "Single-Family Attached (Combines Own and Rent tenure)",
+        "Smaller (2-4 unit) Multifamily (Combines Own and Rent tenure)",
+        "Midsize (5-49 units) Multifamily (Own tenure alone)",
+        "Midsize (5-49 units) Multifamily (Rent tenure alone)",
+        "Larger (50 or more units) Multifamily (Own tenure alone)",
+        "Larger (50 or more units) Multifamily (Rent tenure alone)",
+        "All Housing (all above housing types) (Own tenure alone)",
+        "All Housing (all above housing types) (Rent tenure alone)"
+    ]
 
-    if selected_type in ["5-49 Units", "50+ Units", "All Housing Types"]:
-        tenure_options_display = ["Own", "Rent"]
-    else:
-        tenure_options_display = ["Own/Rent"]
-    selected_tenure = st.sidebar.selectbox("Tenure:", tenure_options_display)
-    selected_size = st.sidebar.selectbox("Number of Bedrooms:", ['Studio-1BR' if x == '0-1 BR' else x for x in sorted(size_options)])
+    # Sidebar selectbox to choose structure and tenure together
+    selected_combined_option = st.sidebar.selectbox("Select Housing Type and Tenure:", combined_options)
+
+    # Mapping selected option back to structure and tenure
+    structure_tenure_map = {
+        "Single-Family Detached (Combines Own and Rent tenure)": ("Single-Family Detached", "Own/Rent"),
+        "Single-Family Attached (Combines Own and Rent tenure)": ("Single-Family Attached", "Own/Rent"),
+        "Smaller (2-4 unit) Multifamily (Combines Own and Rent tenure)": ("2-4 Units", "Own/Rent"),
+        "Midsize (5-49 units) Multifamily (Own tenure alone)": ("5-49 Units", "Own"),
+        "Midsize (5-49 units) Multifamily (Rent tenure alone)": ("5-49 Units", "Rent"),
+        "Larger (50 or more units) Multifamily (Own tenure alone)": ("50+ Units", "Own"),
+        "Larger (50 or more units) Multifamily (Rent tenure alone)": ("50+ Units", "Rent"),
+        "All Housing (all above housing types) (Own tenure alone)": ("All Housing Types", "Own"),
+        "All Housing (all above housing types) (Rent tenure alone)": ("All Housing Types", "Rent"),
+    }
+
+    # Get the selected structure and tenure
+    selected_type, selected_tenure = structure_tenure_map[selected_combined_option]
+
+    # sorted_structure_options = sorted((set(structure_options)), key=lambda x: custom_order_structure.index(x))
+    # renamed_structure_options = [structure_rename_map[x] for x in sorted_structure_options]
+    # # User selects Type, Tenure, and Size separately
+    # selected_display_type = st.sidebar.selectbox("Structure Type:", renamed_structure_options)
+    # selected_type = next(key for key, value in structure_rename_map.items() if value == selected_display_type)
+
+    # if selected_type in ["5-49 Units", "50+ Units", "All Housing Types"]:
+    #     tenure_options_display = ["Own", "Rent"]
+    # else:
+    #     tenure_options_display = ["Own/Rent"]
+    # selected_tenure = st.sidebar.selectbox("Tenure:", tenure_options_display)
+    selected_size = st.sidebar.selectbox("Housing Size (Number of Bedrooms):", ['Studio-1BR' if x == '0-1 BR' else x for x in sorted(size_options)])
 
     # Reconstruct the structure format
     selected_structure = f"{selected_type} ({selected_tenure}) {selected_size}"
@@ -171,7 +203,7 @@ try:
     labels_selected = {
     "Household Size": ["Structure", "VALUE_TENURE", "value_range", "PERSONS"],
     "Persons by Age": ["Structure", "VALUE_TENURE", "value_range", "0-4","5-17","18-34", "35-44", "45-54", "55-64", "65-74", "75+"],
-    "Persons by Age Statistics" : ["Structure", "VALUE_TENURE", "value_range","Number of Households" , "Standard Errors", "Low", "High", "Error Margin as %"],
+    "Household Size Statistics" : ["Structure", "VALUE_TENURE", "value_range","Number of Households" , "Standard Errors", "Low", "High", "Error Margin as %"],
     "Total Public School Children" : ["Structure", "VALUE_TENURE", "value_range", "PSC"],
     "Public School Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
     "Public School Children Statistics": ["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
@@ -180,7 +212,7 @@ try:
     "School Age Children Statistics":["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
     }
 
-    selected_value = st.sidebar.selectbox("Value", filtered_data['VALUE_TENURE'].dropna().unique())
+    selected_value = st.sidebar.selectbox("Housing Value", filtered_data['VALUE_TENURE'].dropna().unique())
     filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
     # Display the filtered data
     if not filtered_data.empty:
