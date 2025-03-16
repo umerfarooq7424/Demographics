@@ -153,7 +153,7 @@ try:
     ]
 
     # Sidebar selectbox to choose structure and tenure together
-    selected_combined_option = st.sidebar.selectbox("Select Housing Type and Tenure:", combined_options)
+    selected_combined_option = st.sidebar.selectbox("Housing Type and Tenure:", combined_options)
 
     # Mapping selected option back to structure and tenure
     structure_tenure_map = {
