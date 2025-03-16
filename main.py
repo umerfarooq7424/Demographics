@@ -211,9 +211,10 @@ try:
     "School Age Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
     "School Age Children Statistics":["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
     }
-
-    selected_value = st.sidebar.selectbox("Housing Value", filtered_data['VALUE_TENURE'].dropna().unique())
-    filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
+    housing_value_options = ["Default"] + list(filtered_data['VALUE_TENURE'].dropna().unique())
+    selected_value = st.sidebar.selectbox("Housing Value", housing_value_options)
+    if selected_value != "Default":
+        filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
     # Display the filtered data
     if not filtered_data.empty:
         # st.dataframe(filtered_data)
