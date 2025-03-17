@@ -183,7 +183,8 @@ try:
     #     tenure_options_display = ["Own/Rent"]
     # selected_tenure = st.sidebar.selectbox("Tenure:", tenure_options_display)
     selected_size = st.sidebar.selectbox("Housing Size (Number of Bedrooms):", ['Studio-1BR' if x == '0-1 BR' else x for x in sorted(size_options)])
-
+    if (selected_size == 'Studio-1BR'):
+        selected_size = '0-1 BR'
     # Reconstruct the structure format
     selected_structure = f"{selected_type} ({selected_tenure}) {selected_size}"
     
