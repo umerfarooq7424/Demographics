@@ -78,14 +78,14 @@ unit_types = {
 }
 category_labels = {
     "Household Size": "pop",
-    "Persons by Age": "pop",
     "Household Size Statistics": "pop",
-    "Total Public School Children" : "psc",
-    "Public School Children by school level and grade group": "psc",
-    "Public School Children Statistics": "psc",
+    "Persons by Age": "pop",
     "Total School Age Children" : "sac",
     "School Age Children by school level and grade group": "sac",
     "School Age Children Statistics": "sac",
+    "Total Public School Children" : "psc",
+    "Public School Children by school level and grade group": "psc",
+    "Public School Children Statistics": "psc"
 }
 
 # selected_unit_type = st.sidebar.selectbox("Housing Age:", unit_types, help="Newer Housing: Built between 2000-2021.\nAll Housing: Built in any year.")
@@ -202,14 +202,14 @@ try:
     statistics= ["Number of Households" , "Standard Errors", "Low", "High", "Error Margin as %"]
     labels_selected = {
     "Household Size": ["Structure", "VALUE_TENURE", "value_range", "PERSONS"],
-    "Persons by Age": ["Structure", "VALUE_TENURE", "value_range", "0-4","5-17","18-34", "35-44", "45-54", "55-64", "65-74", "75+"],
     "Household Size Statistics" : ["Structure", "VALUE_TENURE", "value_range","Number of Households" , "Standard Errors", "Low", "High", "Error Margin as %"],
-    "Total Public School Children" : ["Structure", "VALUE_TENURE", "value_range", "PSC"],
-    "Public School Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
-    "Public School Children Statistics": ["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
+    "Persons by Age": ["Structure", "VALUE_TENURE", "value_range", "0-4","5-17","18-34", "35-44", "45-54", "55-64", "65-74", "75+"],
     "Total School Age Children" : ["Structure", "VALUE_TENURE", "value_range", "SAC"],
     "School Age Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
     "School Age Children Statistics":["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
+    "Total Public School Children" : ["Structure", "VALUE_TENURE", "value_range", "PSC"],
+    "Public School Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
+    "Public School Children Statistics": ["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
     }
     housing_value_options = ["Default"] + list(filtered_data['VALUE_TENURE'].dropna().unique())
     selected_value = st.sidebar.selectbox("Housing Value", housing_value_options)
