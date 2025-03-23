@@ -92,6 +92,31 @@ category_labels = {
 selected_label = st.sidebar.selectbox("Housing Age:", list(unit_types.keys()))
 selected_unit_type = unit_types[selected_label]
 
+# Combined structure and tenure options
+combined_options = [
+    "Single-Family Detached (Combines Own and Rent tenure)",
+    "Single-Family Attached (Combines Own and Rent tenure)",
+    "Smaller (2-4 unit) Multifamily (Combines Own and Rent tenure)",
+    "Midsize (5-49 units) Multifamily (Own tenure alone)",
+    "Midsize (5-49 units) Multifamily (Rent tenure alone)",
+    "Larger (50 or more units) Multifamily (Own tenure alone)",
+    "Larger (50 or more units) Multifamily (Rent tenure alone)",
+    "All Housing (all above housing types) (Own tenure alone)",
+    "All Housing (all above housing types) (Rent tenure alone)"
+]
+
+# Sidebar selectbox to choose structure and tenure together
+selected_combined_option = st.sidebar.selectbox("Housing Type and Tenure:", combined_options)
+br_size_options = ['3 BR', '4-5 BR', '2 BR', '0-1 BR']
+selected_size = st.sidebar.selectbox("Housing Size (Number of Bedrooms):", ['Studio-1BR' if x == '0-1 BR' else x for x in sorted(br_size_options)])
+housing_value = []
+if (selected_unit_type=='Allunits'):
+    housing_value=['All Values', 'First Tercile', 'Second Tercile', 'Third Tercile ']
+else:
+    housing_value=['All Values', '    Below Median', '    Above Median']
+all_housing_value_options = ["Default"] + housing_value
+selected_value = st.sidebar.selectbox("Housing Value", all_housing_value_options)
+
 selected_category_label = st.sidebar.selectbox("Data Category:", category_labels.keys())
 selected_category = category_labels[selected_category_label]
 if (selected_unit_type=='Allunits'):
@@ -111,49 +136,35 @@ try:
         return structure.strip()  
     unique_structures = data["Structure"].apply(normalize_structure).unique()
 
-    structure_options = []
-    tenure_options = set()
-    size_options = set()
-    for structure in unique_structures:
-        parts = structure.split("(")
-        if len(parts) == 2:
-            house_type = parts[0].strip()
-            tenure_bedroom = parts[1].split(")")
-            if len(tenure_bedroom) == 2:
-                tenure = tenure_bedroom[0].strip()
-                bedroom = tenure_bedroom[1].strip()
-                structure_options.append(house_type)
-                tenure_options.add(tenure)
-                size_options.add(bedroom)
+    # structure_options = []
+    # tenure_options = set()
+    # size_options = set()
+    # for structure in unique_structures:
+    #     parts = structure.split("(")
+    #     if len(parts) == 2:
+    #         house_type = parts[0].strip()
+    #         tenure_bedroom = parts[1].split(")")
+    #         if len(tenure_bedroom) == 2:
+    #             tenure = tenure_bedroom[0].strip()
+    #             bedroom = tenure_bedroom[1].strip()
+    #             structure_options.append(house_type)
+    #             tenure_options.add(tenure)
+    #             size_options.add(bedroom)
 
-    # Convert sets to lists
-    tenure_options = list(tenure_options)
-    size_options = list(size_options)
+    # # Convert sets to lists
+    # tenure_options = list(tenure_options)
+    # size_options = list(size_options)
 
-    custom_order_structure = ['Single-Family Detached','Single-Family Attached','2-4 Units','5-49 Units','50+ Units','All Housing Types']
-    structure_rename_map = {
-    'Single-Family Detached': 'Single Family Detached',
-    'Single-Family Attached': 'Single Family Attached (Townhouses)',
-    '2-4 Units': 'Smaller Multifamily (2-4 units)',
-    '5-49 Units': 'Midsize Multifamily (5-49 units)',
-    '50+ Units': 'Larger Multifamily (50 units+)',
-    'All Housing Types': 'All Housing Units'
-    }   
-    # Combined structure and tenure options
-    combined_options = [
-        "Single-Family Detached (Combines Own and Rent tenure)",
-        "Single-Family Attached (Combines Own and Rent tenure)",
-        "Smaller (2-4 unit) Multifamily (Combines Own and Rent tenure)",
-        "Midsize (5-49 units) Multifamily (Own tenure alone)",
-        "Midsize (5-49 units) Multifamily (Rent tenure alone)",
-        "Larger (50 or more units) Multifamily (Own tenure alone)",
-        "Larger (50 or more units) Multifamily (Rent tenure alone)",
-        "All Housing (all above housing types) (Own tenure alone)",
-        "All Housing (all above housing types) (Rent tenure alone)"
-    ]
-
-    # Sidebar selectbox to choose structure and tenure together
-    selected_combined_option = st.sidebar.selectbox("Housing Type and Tenure:", combined_options)
+    # custom_order_structure = ['Single-Family Detached','Single-Family Attached','2-4 Units','5-49 Units','50+ Units','All Housing Types']
+    # structure_rename_map = {
+    # 'Single-Family Detached': 'Single Family Detached',
+    # 'Single-Family Attached': 'Single Family Attached (Townhouses)',
+    # '2-4 Units': 'Smaller Multifamily (2-4 units)',
+    # '5-49 Units': 'Midsize Multifamily (5-49 units)',
+    # '50+ Units': 'Larger Multifamily (50 units+)',
+    # 'All Housing Types': 'All Housing Units'
+    # }   
+    
 
     # Mapping selected option back to structure and tenure
     structure_tenure_map = {
@@ -182,7 +193,6 @@ try:
     # else:
     #     tenure_options_display = ["Own/Rent"]
     # selected_tenure = st.sidebar.selectbox("Tenure:", tenure_options_display)
-    selected_size = st.sidebar.selectbox("Housing Size (Number of Bedrooms):", ['Studio-1BR' if x == '0-1 BR' else x for x in sorted(size_options)])
     if (selected_size == 'Studio-1BR'):
         selected_size = '0-1 BR'
     # Reconstruct the structure format
@@ -212,8 +222,6 @@ try:
     "Public School Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
     "Public School Children Statistics": ["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
     }
-    housing_value_options = ["Default"] + list(filtered_data['VALUE_TENURE'].dropna().unique())
-    selected_value = st.sidebar.selectbox("Housing Value", housing_value_options)
     if selected_value != "Default":
         filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
     # Display the filtered data
