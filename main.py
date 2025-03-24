@@ -241,7 +241,7 @@ try:
     "Public School Children by school level and grade group": ["Structure", "VALUE_TENURE", "value_range", "(K-5)", "(6-8)", "(9-12)"],
     "Public School Children Statistics": ["Structure", "VALUE_TENURE", "value_range", "Standard Errors", "Low", "High", "Error Margin as %"],
     }
-    if selected_value != "Default":
+    if selected_value != "All Available":
         filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
     # Display the filtered data
     if not filtered_data.empty:
