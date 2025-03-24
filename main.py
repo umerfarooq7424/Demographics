@@ -107,7 +107,25 @@ combined_options = [
 
 # Sidebar selectbox to choose structure and tenure together
 selected_combined_option = st.sidebar.selectbox("Housing Type and Tenure:", combined_options)
-br_size_options = ['3 BR', '4-5 BR', '2 BR', '0-1 BR']
+
+if selected_combined_option == "Single-Family Detached (Combines Own and Rent tenure)":
+    br_size_options = ['3 BR', '4-5 BR', '2 BR']
+elif selected_combined_option == "Single-Family Attached (Combines Own and Rent tenure)":
+    br_size_options = ['3 BR', '2 BR']
+elif selected_combined_option in [
+    "Smaller (2-4 unit) Multifamily (Combines Own and Rent tenure)", 
+    "Midsize (5-49 units) Multifamily (Own tenure alone)", 
+    "Midsize (5-49 units) Multifamily (Rent tenure alone)", 
+    "Larger (50 or more units) Multifamily (Own tenure alone)", 
+    "Larger (50 or more units) Multifamily (Rent tenure alone)"
+]:
+    br_size_options = ['3 BR', '2 BR', '0-1 BR']
+elif selected_combined_option in [
+    "All Housing (all above housing types) (Own tenure alone)", 
+    "All Housing (all above housing types) (Rent tenure alone)"
+]:
+    br_size_options = ['3 BR', '4-5 BR', '2 BR', '0-1 BR']
+
 selected_size = st.sidebar.selectbox("Housing Size (Number of Bedrooms):", ['Studio-1BR' if x == '0-1 BR' else x for x in sorted(br_size_options)])
 housing_value = []
 if (selected_unit_type=='Allunits'):
