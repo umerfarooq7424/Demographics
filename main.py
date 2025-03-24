@@ -133,7 +133,7 @@ if (selected_unit_type=='Allunits'):
     housing_value=['All Values', 'First Tercile', 'Second Tercile', 'Third Tercile ']
 else:
     housing_value=['All Values', '    Below Median', '    Above Median']
-all_housing_value_options = ["Default"] + housing_value
+all_housing_value_options = ["All Available"] + housing_value
 selected_value = st.sidebar.selectbox("Housing Value", all_housing_value_options)
 
 selected_category_label = st.sidebar.selectbox("Data Category:", category_labels.keys())
