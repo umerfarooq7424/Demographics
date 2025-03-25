@@ -134,7 +134,8 @@ if (selected_unit_type=='Allunits'):
     housing_value=['All Values', 'First Tercile', 'Second Tercile', 'Third Tercile ']
 else:
     housing_value=['All Values', '    Below Median', '    Above Median']
-all_housing_value_options = ["Default"] + housing_value
+
+all_housing_value_options = ["All Available"] + housing_value
 selected_value = st.sidebar.selectbox("(iv) Housing Value", all_housing_value_options)
 
 st.sidebar.title("3. Data Category")
@@ -250,7 +251,7 @@ try:
     table_placeholder = st.empty()
 
     if selected_state != "SELECT A STATE":
-        if selected_value != "Default":
+        if selected_value != "All Available":
             filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
         # Display the filtered data
         with table_placeholder.container():
