@@ -138,7 +138,7 @@ else:
 all_housing_value_options = ["All Available"] + housing_value
 selected_value = st.sidebar.selectbox("(iv) Housing Value", all_housing_value_options)
 
-st.sidebar.title("3. Demographic Data Category")
+st.sidebar.title("3. Demographic Data Category") 
 selected_category_label = st.sidebar.selectbox("", category_labels.keys())
 selected_category = category_labels[selected_category_label]
 if (selected_unit_type=='Allunits'):
