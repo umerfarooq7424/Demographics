@@ -379,6 +379,17 @@ try:
         """,
         unsafe_allow_html=True,
         )
+    st.markdown(
+        """
+        <div style="text-align: center; font-size: 0.85em; color: gray;">
+            Demographic multipliers derived from the 2017-2021 American Community Survey (ACS) by 
+            <a href="https://www.csi.cuny.edu/campus-directory/alexandru-voicu" target="_blank" style="color: gray;">
+                Professor Alexandru Voicu of the College of Staten Island
+            </a>.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 except Exception as e:
     st.error(f"An error occurred: {e}")
