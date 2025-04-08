@@ -71,7 +71,7 @@ definitions = {
 
 
 # User selects state, unit type, and data category
-st.sidebar.title("1. Location")
+st.sidebar.title("1. Housing Location")
 selected_state = st.sidebar.selectbox("State:", df_states['State']).upper()
 # unit_types = ["Allunits", "Newerunits"]
 unit_types = {
