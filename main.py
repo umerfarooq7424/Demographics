@@ -135,8 +135,8 @@ if (selected_unit_type=='Allunits'):
 else:
     housing_value=['All Values', '    Below Median', '    Above Median']
 
-all_housing_value_options = ["All Available"] + housing_value
-selected_value = st.sidebar.selectbox("(iv) Housing Value", all_housing_value_options)
+# all_housing_value_options = ["All Available"] + housing_value
+selected_value = st.sidebar.selectbox("(iv) Housing Value", housing_value)
 
 st.sidebar.title ("3. Demographic Data Category")  
 selected_category_label = st.sidebar.selectbox("", category_labels.keys())
@@ -251,7 +251,7 @@ try:
     table_placeholder = st.empty()
 
     if selected_state != "SELECT A STATE":
-        if selected_value != "All Available":
+        if selected_value != "All Values":
             filtered_data = filtered_data[filtered_data['VALUE_TENURE'] == selected_value]
         # Display the filtered data
         with table_placeholder.container():
