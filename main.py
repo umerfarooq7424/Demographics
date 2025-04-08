@@ -93,7 +93,7 @@ st.sidebar.title("2. Housing Type")
 # selected_unit_type = st.sidebar.selectbox("Housing Age:", unit_types, help="Newer Housing: Built between 2000-2021.\nAll Housing: Built in any year.")
 selected_label = st.sidebar.selectbox("(i) Housing Age:", list(unit_types.keys()))
 selected_unit_type = unit_types[selected_label]
-
+ 
 # Combined structure and tenure options
 combined_options = [
     "Single-Family Detached (Combines Own and Rent tenure)",
