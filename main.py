@@ -1,8 +1,10 @@
+# Import required libraries
 import streamlit as st
 import pandas as pd
 import pydeck as pdk
 import json
 import re
+# Set up custom CSS styling for the Streamlit app (title and instructions)
 st.markdown(
     """
     <style> 
@@ -59,7 +61,7 @@ df_states = pd.DataFrame(state_data)
 with open("gz_2010_us_040_00_5m.json") as f:
     geojson_data = json.load(f)
 
-# Definitions for selection
+# Definitions for selection also the demographic categories
 definitions = {
     "Persons by Age": "Demographic data on the distribution of persons by age categories.",
     "Public School Children": "Data representing children enrolled in public schools across various units.",
@@ -67,6 +69,7 @@ definitions = {
 }
 
 # Streamlit app
+#Sidebar Section for User Inputs
 
 
 # User selects state, unit type, and data category
@@ -106,7 +109,7 @@ combined_options = [
     "All Housing (all above housing types) (Rent tenure alone)"
 ]
 
-# Sidebar selectbox to choose structure and tenure together
+# Sidebar selectbox to choose structure and tenure and avialable bedrooms
 selected_combined_option = st.sidebar.selectbox("(ii) Structure and Tenure:", combined_options)
 
 if selected_combined_option == "Single-Family Detached (Combines Own and Rent tenure)":
@@ -134,9 +137,9 @@ if (selected_unit_type=='Allunits'):
 else:
     housing_value=['All Values', '    Below Median', '    Above Median']
 
-# all_housing_value_options = ["All Available"] + housing_value
+#Select Hosuing values all_housing_value_options = ["All Available"] + housing_value
 selected_value = st.sidebar.selectbox("(iv) Housing Value", housing_value)
-
+#Select Demographic Category
 st.sidebar.title ("3. Demographic Data Category")  
 selected_category_label = st.sidebar.selectbox("", category_labels.keys())
 selected_category = category_labels[selected_category_label]
