@@ -334,9 +334,9 @@ try:
                 ],
             ))
         
-    file_path = "Demographic Multipliers Overview. Quick Guide. Glossary.docx"
+    file_path = "DM Overview Quick Guide Glossary Latest.docx"
     with open(file_path, "rb") as file:
-        st.download_button("Download Document", file, file_name="Demographic Multipliers Overview. Quick Guide. Glossary.docx")
+        st.download_button("Download Document", file, file_name="DM Overview Quick Guide Glossary Latest.docx")
     # st.markdown(f'[Click to open in Word](./{file_path})', unsafe_allow_html=True)
 
     with st.expander("Glossary and User Guide"):
