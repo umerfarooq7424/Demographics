@@ -138,7 +138,7 @@ else:
     housing_value=['All Values', '    Below Median', '    Above Median']
 
 #Select Hosuing values all_housing_value_options = ["All Available"] + housing_value
-selected_value = st.sidebar.selectbox("(iv) Housing Value", housing_value)
+selected_value = st.sidebar.selectbox("(iv) Housing Value in dollars $", housing_value)
 #Select Demographic Category
 st.sidebar.title ("3. Demographic Data Category")  
 selected_category_label = st.sidebar.selectbox("", category_labels.keys())
